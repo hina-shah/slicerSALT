@@ -17,6 +17,7 @@
 #============================================================================
 
 set(modules
+        ShapeAnalysisToolBox
   )
 
 set(${APPLICATION_NAME}_MODULES)
