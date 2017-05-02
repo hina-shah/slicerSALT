@@ -58,14 +58,9 @@ class DataImporterWidget(ScriptedLoadableModuleWidget):
     self.widget = widget
     self.layout.addWidget(widget)
 
+    self.CSVFileBrowsePushButton = self.getWidget('CSVFileBrowsePushButton')
+    self.CSVFileBrowsePushButton.connect('clicked(bool)', self.onCSVFileBrowsePushButton)
     print 'Added the widget'
-    #
-    # Apply Button
-    #
-    self.applyButton = qt.QPushButton("Apply")
-    self.applyButton.toolTip = "Run the algorithm."
-    self.applyButton.enabled = True
-    self.widget.addRow(self.applyButton)
 
   def cleanup(self):
     pass
@@ -90,7 +85,9 @@ class DataImporterWidget(ScriptedLoadableModuleWidget):
   def onApplyButton(self):
     print " End of pgm! "
 
-
+  def onCSVFileBrowsePushButton(self):
+    filename = qt.QFileDialog.getOpenFileName(self.widget, "Open CSV File", ".", "CSV Files (*.csv)")
+    print filename
 #
 # DataImporterLogic
 #
