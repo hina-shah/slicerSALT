@@ -91,7 +91,7 @@ if(NOT DEFINED ${proj}_DIR)
     ThresholdScalarVolume
     VotingBinaryHoleFillingImageFilter
     MergeModels
-    ModelMaker
+    #ModelMaker
     ResampleDTIVolume
     # ResampleScalarVectorDWIVolume # Needed by 'CropVolume' module
     )
